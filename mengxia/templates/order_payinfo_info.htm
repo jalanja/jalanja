@@ -1,0 +1,86 @@
+<!-- $Id: booking_info.htm 16854 2009-12-07 06:20:09Z sxc_shop $ -->
+{include file="pageheader.htm"}
+<div class="list-div" style="margin-bottom:5px">
+<table width="100%" cellpadding="3" cellspacing="1" >
+  <tr>
+    <th colspan="4">{$lang.11_order_payment}</th>
+  <tr>
+  <tr>
+    <td align="right" class="first-cell" >{$lang.label_user_name}：</td>
+    <td>{$row.user_name|escape} [{$row.order_sn}]</td>
+    <td align="right" class="first-cell" >{$lang.label_pay_time}：</td>
+    <td>{$row.pay_time} [{$row.add_time}]</td>
+  </tr>
+  <tr>
+    <td align="right" class="first-cell" >{$lang.y_pay_bank}：</td>
+    <td>{$row.pay_bank}</td>
+    <td align="right" class="first-cell" >{$lang.y_pay_account}：</td>
+    <td>{$row.pay_account}</td>
+  </tr>
+  <tr>
+    <td align="right" class="first-cell" valign="top">{$lang.total_fee}：</td>
+    <td>{$row.pay_amount}</td>
+	<td align="right" class="first-cell">{$lang.y_payee_bank}：</td>
+	<td>{$row.payee_bank}</td>
+  </tr>
+  <tr>
+    <td align="right" class="first-cell" >{$lang.pay_note}：</td>
+    <td colspan="3">{$row.note} </td>
+  </tr>
+  {if $row.status >1}
+  <tr>
+    <th colspan="4" >{$lang.action_info}</th>
+  </tr>
+  <tr>
+    <td align="right" class="first-cell">{$lang.pay_status}：</td><td>{$lang.ycs.$row.status}</td>
+    <td align="right" class="first-cell">{$lang.action_time}：</td><td>{$row.operate_time}</td>
+  </tr>
+  <tr>
+    <td align="right" class="first-cell">{$lang.label_action_note}：</td><td colspan="3">{$row.operate_note}</td>
+  </tr>
+  {/if}
+</table>
+</div>
+
+<div class="list-div">
+<form action="payinfo.php" method="post" name="theForm" onsubmit="return check();">
+<table  width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th colspan="6">{$lang.action_info}</th>
+  </tr>
+  <tr>
+    <td><div align="right"><strong>{$lang.label_action_note}</strong></div></td>
+    <td colspan="5"><textarea name="action_note" cols="80" rows="3"></textarea></td>
+  </tr>
+  <tr>
+    <td><div align="right"></div>
+      <div align="right"><strong>{$lang.label_operable_act}</strong> </div></td>
+    <td colspan="5">
+	    {if $row.status ==1}
+        <input name="confirm" type="submit" value="{$lang.op_confirm}" class="button" />
+		<input name="invalid" type="submit" value="{$lang.op_invalid}" class="button" />
+		{elseif $row.status==2}
+		<input name="invalid" type="submit" value="{$lang.op_invalid}" class="button" />
+		{else}
+		<input name="confirm" type="submit" value="{$lang.op_confirm}" class="button" />
+		{/if}
+		<input type="hidden" name="act" value="operate">
+        <input name="pay_id" type="hidden" value="{$row.id}">
+    </td>
+    </tr>
+</table>
+</form>
+</div>
+
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+function check(){
+   if(document.forms['theForm'].elements['action_note'].value==''){
+      alert(pls_input_note);
+	  return false;
+   }
+}
+</script>
+{/literal}
+{include file="pagefooter.htm"}

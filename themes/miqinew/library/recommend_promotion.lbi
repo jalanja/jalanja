@@ -1,0 +1,79 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<div class="picScroll-left">
+  <div class="hd">
+    <div class="title_txt"> <img src="../images/title_txt01.jpg" border="0"> </div>
+    <div class="title_more"> <a href="search.php?intro=promotion">{$lang.y_more}</a> </div>
+    <div class="title_btn">
+      <div class="title_btn_right"> <a class="next"></a> </div>
+      <ul>
+      </ul>
+      <div class="title_btn_left"> <a class="prev"></a> </div>
+    </div>
+  </div>
+  <div class="bd">
+    <ul class="picList">
+      <!--{foreach from=$promotion_goods item=goods name='promotion_foreach'}-->
+      <li>
+        <div class="time_num">
+          <p class="endtime" value="{$goods.promote_end_date}"></p>
+        </div>
+        <div class="time_center">
+          <div class="time_img"> <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}"  width="200" height="200"/></a> </div>
+          <div class="time_price"><b>{$lang.y_price_promote}</b>
+            <p>{$goods.zhekou}<font style="font-size:13px">{$lang.y_discount}</font></p>
+          </div>
+        </div>
+        <div class="time_txt"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.short_style_name|escape:html}</a> </div>
+        <div class="time_btn"> <a href="{$goods.url}"></a> </div>
+        <div class="time_bottom"> <b><span>{$goods.sales_volume}</span>{$lang.y_count_buy}</b>   
+          <p>{$lang.y_quick_buy}</p>
+        </div>
+        <div style="clear:both;"></div>
+        <!--成功加入购物车弹出框-->
+       <div class="sucess_joinCart" id="addtocartdialog_retui_{$goods.id}"> </div>
+      </li>  
+      <!--{/foreach}-->
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+	jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",vis:5,scroll:5,easing:"easeOutBounce",delayTime:0,trigger:"click"});
+	
+	$(function(){
+		var datename = new Date();
+		var Offset = datename.getTimezoneOffset() * 28800;
+		
+		setInterval(function(){
+		  $(".endtime").each(function(){
+			var obj = $(this);
+			var endTime = new Date(parseInt(obj.attr('value')) * 1000 - Offset) ;
+			var show_day =  obj.attr('showday');
+			var nowTime = new Date();
+			var nMS=endTime.getTime() - nowTime.getTime();
+			var myD=Math.floor(nMS/(1000 * 60 * 60 * 24));
+			var myH_show=Math.floor(nMS/(1000*60*60) % 24);
+			var myH=Math.floor(nMS/(1000*60*60));
+			var myM=Math.floor(nMS/(1000*60)) % 60;
+			var myS=Math.floor(nMS/1000) % 60;
+			var myMS=Math.floor(nMS/100) % 10;
+			
+			if(myS>=0){
+				if(show_day == 'show')
+				{
+					var str = '<strong class="tcd-d">'+myD+'</strong>{$lang.y_day}<strong class="tcd-h">'+myH_show+'</strong>{$lang.y_hour}<strong class="tcd-m">'+myM+'</strong>{$lang.y_minute}<strong class="tcd-s">'+myS+'</strong>{$lang.y_second}';
+				}
+				else
+				{
+					var str = '<span>'+myH+'</span>{$lang.y_hour}<span>'+myM+'</span>{$lang.y_minute}<span>'+myS+'</span>{$lang.y_second}';
+				}
+			}else{
+				var str = "{$lang.y_ended}";	
+			}
+			obj.html(str);
+		  });
+		}, 100);
+	})
+	
+</script> 
+<!-- {/if} -->

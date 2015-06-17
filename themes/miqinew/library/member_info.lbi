@@ -1,0 +1,13 @@
+<div id="append_parent"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+
+ <li>{$lang.hello}，<font class="f4_b">{$user_info.username}</font>, {$lang.welcome_return}！</li>
+<li><a href="{$lang.y_ssl_url}user.php">{$lang.user_center}</a></li>
+<li> <a href="{$lang.y_ssl_url}user.php?act=logout">{$lang.user_logout}</a></li>
+
+{else}
+ 
+ <li><a href="{$lang.y_ssl_url}user.php">{$lang.y_login}</a></li>
+ <li><a href="{$lang.y_ssl_url}user.php?act=register">{$lang.y_register}</a></li>
+{/if}

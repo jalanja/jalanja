@@ -1,0 +1,135 @@
+if ( $host = 'jalanja.com' ){
+   rewrite ^/(.*)$ http://www.jalanja.com/$1 permanent;
+}
+
+location ~* \.(lbi|dwt|htaccess|ini|lock|)$ {  
+     deny all;  
+}  
+
+# 301 redirect old URL of Brand Categories to the new URL
+rewrite ^/friso.html$ /brand-72.html permanent;
+rewrite ^/friso?dir=desc&order=manufacture$ /brand-72.html permanent;
+rewrite ^/mamypoko.html$ /brand-73.html permanent;
+rewrite ^/nutrilon.html$ /brand-76.html permanent;
+rewrite ^/nutrilon?dir=asc&order=flavor_milk_kid$ /brand-76.html permanent;
+rewrite ^/nutrilon?dir=asc&order=price$ /brand-76.html permanent;
+rewrite ^/bebelac.html$ /brand-78.html permanent;
+rewrite ^/bebelac.html?___store=cn&___from_store=id$ /brand-78.html permanent;
+rewrite ^/bebelac?___from_store=default&___store=cn&dir=desc&limit=16&order=phase_milk_formula&p=2$ /brand-78.html permanent;
+rewrite ^/bebelac?___store=cn&dir=asc&order=flavor_milk_kid&___from_store=id$ /brand-78.html permanent;
+rewrite ^/bebelac?___store=default&dir=desc&order=name&p=1&___from_store=cn$ /brand-78.html permanent;
+rewrite ^/dancow.html$ /brand-79-c0.html permanent;
+rewrite ^/dancow?___from_store=id&___store=cn&dir=desc&limit=8&order=name$ /brand-79-c0.html permanent;
+rewrite ^/dancow?___from_store=id&___store=default&dir=asc&order=price&p=1$ /brand-79-c0.html permanent;
+rewrite ^/dancow?___store=cn&___from_store=default&dir=desc&order=price&p=1$ /brand-79-c0.html permanent;
+rewrite ^/dancow?___store=cn&___from_store=id&dir=desc&limit=16&order=flavor_milk_kid&p=1$ /brand-79-c0.html permanent;
+rewrite ^/dancow?dir=asc&order=price$ /brand-79-c0.html permanent;
+rewrite ^/enfamil?___from_store=default&___store=id&dir=asc&order=phase_milk_formula$ /brand-80.html permanent;
+rewrite ^/morinaga.html$ /brand-82.html permanent;
+rewrite ^/nutricia.html$ /brand-83.html permanent;
+rewrite ^/nutricia?___from_store=id&___store=cn&dir=asc&limit=16&order=price$ /brand-83.html permanent;
+
+# 301 redirect old URL of Product Categories to the new URL
+rewrite ^/popok$ /category-152.html  permanent;
+rewrite ^/susu$ /category-153-b0.html permanent;
+
+# 301 redirect old URL of Articles to the new URL
+rewrite ^/payment/$ /article-20.html permanent;
+rewrite ^/Shipping/$ /article-39.html permanent;
+rewrite ^/about-us/$ /article-22.html permanent;
+
+# 301 redirect old URL of Blog to the new URL
+rewrite ^/blog/tips-memilih-susu-formula-bayi/$ /article-52.html permanent;
+rewrite ^/blog/cara-memilih-popok-bayi-sekali-pakai-yang-tepat/$ /article-53.html permanent;
+rewrite ^/blog/delapan-jenis-zat-yang-terkandung-dalam-susu-formula/$ /article-54.html permanent;
+rewrite ^/blog/ruam-popok-atau-diaper-rash/$ /article-55.html permanent;
+rewrite ^/blog/tanda-tanda-bahwa-bayi-alergi-terhadap-susu-formula/$ /article-56.html permanent;
+rewrite ^/blog/wordpress/$ /article-17.html  permanent;
+rewrite ^/blog/$ /article-17.html  permanent; 
+
+# 301 redirect old URL Tag of Blog to the new URL
+rewrite ^/blog/tag/susu-formula/$ /article-17.html  permanent;
+rewrite ^/blog/tag/tips-membeli/$ /article-17.html  permanent;
+
+# 301 redirect old URL of Product Pages to the new URL
+rewrite ^/nutricia-nutribaby-royal-1-allerpre-400gr$ /Nutribaby-Royal-Allerpre-1-0-6-Bulan-400gr permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1309$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1315$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1349$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1349$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1353$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1399$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1409$ /brand-79.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1411$ /brand-79.html permanent;
+rewrite ^/enfagrow-a-3-3?___store=cn&___from_store=id$ /brand-80.html permanent;
+rewrite ^/enfagrow-a-plus-rasa-madu-tahap-3-800gr$ /susu-enfagrow-a-plus-3-madu-1-3-tahun permanent;
+rewrite ^/enfamil-a-gentle-care-berat-900g-untuk-0-12-bulan-1336$ /enfamil-a-gentle-care-berat-900g-untuk-0-12-bulan permanent;
+rewrite ^/friso-gold-900gr-1334$ /susu-friso-gold-3-900gr-1-3-tahun permanent;
+rewrite ^/goo-n-pant-size-xxl38-1391$ /Goon-pant-XXL38 permanent;
+rewrite ^/goo-n-pant-size-xxl38-1395$ /Goon-pant-XXL38 permanent;
+rewrite ^/nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan-1345$ /nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan permanent;
+rewrite ^/nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan-1346$ /nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan permanent;
+rewrite ^/nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan-1347$ /nutricia-bebelove-tahap-1-berat-1800gr-box-untuk-bayi-0-6-bulan permanent;
+rewrite ^/nutrilon-royal-3-pronutra-madu-800gr$ /nutrilon-royal-3-pronutra-800gr-madu permanent;
+rewrite ^/pediasure-complete-rasa-vanilla-850gr$ /pediasure-complete-vanilla-900gr permanent;
+rewrite ^/susu-nutribaby-royal-2-comfort-400gr$ /susu-formula-nutribaby-royal-pronutra-2-bersih-400gr-untuk-bayi-6-12-bulan permanent;
+rewrite ^/susu-nutricia-bebemama-rasa-vanila-400g$ /susu-bebemama-vanilla-berry-400gr permanent;
+rewrite ^/susu-pediasure-coklat-850g$ /pediasure-complete-coklat-900gr permanent;
+rewrite ^/susu-pediasure-rasa-vanilla-850g$ /pediasure-complete-vanilla-900gr permanent;
+rewrite ^/susu-s26-nutrisure-gold-rasa-madu-berat-900gr$ /brand-85.html permanent;
+rewrite ^/susu-similac-gain-kid-tahap-4-900gr-rasa-vanila$ /susu-similac-gain-kid-tahap-4-900gr-rasa-vanila permanent;
+rewrite ^/susu-wyeth-s26-promise-gold-tahap-4-1400gr$ /brand-85.html permanent;
+rewrite ^/susu?___from_store=id&___store=cn&dir=asc&flavor_milk_kid=292&limit=32&order=manufacture&price=80000-$ /category-153-b0.html permanent;
+rewrite ^/susu?___from_store=id&___store=cn&flavor_milk_kid=292&limit=16$ /category-153-b0.html permanent;
+rewrite ^/susu?___from_store=id&___store=cn&limit=8&p=5&price=85500-$ /category-153-b0.html permanent;
+rewrite ^/wyethnutrition?dir=asc&limit=32&order=manufacture$ /brand-85.html permanent;
+rewrite ^/dancow-madu-1-dha-probiotic-800gr-box-1305$ /brand-79.html permanent;
+rewrite ^/pediasure-vanilla-900g$ /pediasure-complete-vanilla-900gr permanent;
+rewrite ^/enfamil-a-gentle-care-berat-900g-untuk-0-12-bulan?___store=cn&___from_store=id$ /enfamil-a-gentle-care-berat-900g-untuk-0-12-bulan permanent;
+rewrite ^/pampers-active-baby-tape-diapers-xl50-1318$ /Pampers-Tape-Active-Baby-S-46 permanent;
+rewrite ^/?___SID=0aop0h790r5hn2j5ohnj3ga3g0Ureturn%2F&___store=cn&___from_store=id$ / permanent;
+rewrite ^/friso-gold-800gr-3$ /friso-gold-900gr permanent;
+rewrite ^/mamypoko-pants-soft-fit-size-m-34-for-both-baby-boy-and-girl$ /mamypoko-pants-M-Universal permanent;
+
+rewrite ^/([a-zA-Z0-9-]+)$   /goods.php?url=$1 last;
+
+rewrite ^/index\.html$    /index.php last;
+
+# access any object by its numeric identifier
+rewrite ^/feed-c([0-9]+)\.xml$       /feed.php?cat=$1 last;
+rewrite ^/feed-b([0-9]+)\.xml$       /feed.php?brand=$1 last;
+rewrite ^/feed-type([^/-]+)\.xml$       /feed.php?type=$1 last;
+rewrite ^/feed\.xml$                 /feed.php last;
+
+rewrite ^/category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^/-]*)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$  /category.php?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 last;
+rewrite ^/category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^/-]*)(.*)\.html$                            /category.php?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5 last;
+rewrite ^/category-([0-9]+)-b([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$                                      /category.php?id=$1&brand=$2&page=$3&sort=$4&order=$5 last;
+rewrite ^/category-([0-9]+)-b([0-9]+)-([0-9]+)(.*)\.html$                                                       /category.php?id=$1&brand=$2&page=$3  last;
+rewrite ^/category-([0-9]+)-b([0-9]+)(.*)\.html$                                                                /category.php?id=$1&brand=$2  last;
+rewrite ^/category-([0-9]+)(.*)\.html$                                                                          /category.php?id=$1  last;
+
+rewrite ^/article_cat-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$  /article_cat.php?id=$1&page=$2&sort=$3&order=$4  last;
+rewrite ^/article_cat-([0-9]+)-([0-9]+)-(.+)(.*)\.html$              /article_cat.php?id=$1&page=$2&keywords=$3 last;
+rewrite ^/article_cat-([0-9]+)-([0-9]+)(.*)\.html$                   /article_cat.php?id=$1&page=$2   last;
+rewrite ^/article_cat-([0-9]+)(.*)\.html$                            /article_cat.php?id=$1   last;
+
+rewrite ^/article-([0-9]+)(.*)\.html$                                /article.php?id=$1   last;
+
+rewrite ^/brand-([0-9]+)-c([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)\.html   /brand.php?id=$1&cat=$2&page=$3&sort=$4&order=$5 last;
+rewrite ^/brand-([0-9]+)-c([0-9]+)-([0-9]+)(.*)\.html                /brand.php?id=$1&cat=$2&page=$3 last;
+rewrite ^/brand-([0-9]+)-c([0-9]+)(.*)\.html                         /brand.php?id=$1&cat=$2 last;
+rewrite ^/brand-([0-9]+)(.*)\.html                                   /brand.php?id=$1 last;
+
+rewrite ^/tag-(.*)\.html                                             /search.php?keywords=$1 last;
+rewrite ^/snatch-([0-9]+)\.html$                                     /snatch.php?id=$1 last;
+rewrite ^/group_buy-([0-9]+)\.html$                                  /group_buy.php?act=view&id=$1 last;
+rewrite ^/auction-([0-9]+)\.html$                                    /auction.php?act=view&id=$1 last;
+
+rewrite ^/exchange-id([0-9]+)(.*)\.html$                             /exchange.php?id=$1&act=view last;
+rewrite ^/exchange-([0-9]+)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$ /exchange.php?cat_id=$1&integral_min=$2&integral_max=$3&page=$4&sort=$5&order=$6 last;
+rewrite ^/exchange-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$                         /exchange.php?cat_id=$1&page=$2&sort=$3&order=$4 last;
+rewrite ^/exchange-([0-9]+)-([0-9]+)(.*)\.html$                                          /exchange.php?cat_id=$1&page=$2  last;
+rewrite ^/exchange-([0-9]+)(.*)\.html$                                                   /exchange.php?cat_id=$1  last;
+
+# 404 error handling to customized page
+error_page 404 = /article-44.html;

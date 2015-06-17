@@ -1,0 +1,68 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <Div class="shop_txt"> <a class="aa" href="{$lang.y_ssl_url}flow.php">
+{$str}
+
+  <!-- {if $goods} -->
+  <a href="{$lang.y_ssl_url}flow.php">
+<div class="shopBody" id="shopBody">
+<ul>
+ {foreach from=$goods item=goods name=goods}
+ <li class="shopWhite">
+
+ <div class="shopLi_img">
+ <a href="{$lang.y_global_url}{$goods.url}"><img src="{$goods.goods_thumb}" style="width:43px; height:43px;" alt="{$goods.goods_name}"></a>
+  </div>
+  <div class="shopLi_txt">
+ <p><a  href="{$lang.y_global_url}{$goods.url}">{$goods.short_name}</a></p>
+ 
+ 
+<p class="shopLi_pink"><span>{$goods.goods_price}</span><span style=" color:#999">×{$goods.goods_number}</span></p> 
+ </div>
+<div class="shopLi_del"><a  href="javascript:" onClick="deleteCartGoods({$goods.rec_id})">{$lang.y_delete}</a></div>
+
+
+</li>
+ {/foreach}
+ </ul>
+ <div class="shopSet">
+                    <div class="set_txt">
+                        <p>{$lang.y_count} {$amount}</p>
+                    </div>
+                    <div class="set_btn">
+                        <a href="{$lang.y_ssl_url}flow.php"></a>
+                    </div>
+                </div>
+ 
+</div>
+</a>
+<!-- {else} -->
+<div class="shopBody">
+
+<p class="shopNo">{$lang.y_cart_empty}</p>
+
+</div>
+<!-- {/if} -->
+
+</a> </Div>
+<script type="text/javascript">
+function deleteCartGoods(rec_id)
+{
+Ajax.call('delete_cart_goods.php', 'id='+rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function deleteCartGoodsResponse(res)
+{
+  if (res.error)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+      document.getElementById('ECS_CARTINFO').innerHTML = res.content;
+  }
+}
+</script>
+

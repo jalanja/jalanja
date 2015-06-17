@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="slideTxtBox">
+  <div class="hd">
+    <ul>
+      <li> <b>Merek Susu</b>
+        <p>brand description blalala</p>
+      </li>
+      <li><b>Merek Popok</b>
+        <p>brand description blalala</p>
+      </li>
+      <li><b>Lain-Lain</b>
+        <p>brand description blalala</p>
+      </li>
+    </ul>
+  </div>
+  <div class="bd">
+    <ul>
+      <li class="first"><a href="#" target="_blank" title="Nutricia"><img src="data/brandlogo/1426578448844659259.png" border="0" width="100" height="53" alt="Nutricia"></a></li>
+      <li><a href="#" target="_blank" title="Similac"><img src="data/brandlogo/1426577567392483224.png" border="0" width="100" height="53" alt="Similac"></a></li>
+      <li><a href="#" target="_blank" title="Friso"><img src="data/brandlogo/1426577705970256383.png" border="0" width="100" height="53" alt="Friso"></a></li>
+      <li><a href="#" target="_blank" title="Nutrilon"><img src="data/brandlogo/1426644283592757217.png" border="0" width="100" height="53" alt="Nutrilon"></a></li>
+      <li><a href="#" target="_blank" title="Bebelac"><img src="data/brandlogo/1426578053473698335.png" border="0" width="100" height="53" alt="Bebelac"></a></li>
+      <li><a href="#" target="_blank" title="Dancow"><img src="data/brandlogo/1426578160916274570.png" border="0" width="100" height="53" alt="Dancow"></a></li>
+      <li><a href="#" target="_blank" title="Enfamil"><img src="data/brandlogo/1426644443670218706.png" border="0" width="100" height="53" alt="Enfamil"></a></li>
+      <li><a href="#" target="_blank" title="Morinaga"><img src="data/brandlogo/1426578396660490999.png" border="0" width="100" height="53" alt="Morinaga"></a></li>
+      <li class="first"><a href="#" target="_blank" title="Pediasure"><img src="data/brandlogo/1426643021867567461.png" border="0" width="100" height="53" alt="pediasure"></a></li>
+      <li><a href="#" target="_blank" title="Wyeth"><img src="data/brandlogo/1426642966187437940.png" border="0" width="100" height="53" alt="Wyeth"></a></li>
+    </ul>
+    <ul>
+      <li class="first"><a href="#" target="_blank" title="MamiPoko"><img src="data/brandlogo/1426642878765570083.png" border="0" width="100" height="53" alt="MamiPoko"></a></li>
+      <li><a href="#" target="_blank" title="Merries"><img src="data/brandlogo/1426642888422253566.png" border="0" width="100" height="53" alt="Merries"></a></li>
+      <li><a href="#" target="_blank" title="Pampers"><img src="data/brandlogo/1426642908107459795.png" border="0" width="100" height="53" alt="Pampers"></a></li>
+      <li><a href="#" target="_blank" title="Goo.n"><img src="data/brandlogo/1426578249033817079.png" border="0" width="100" height="53" alt="Goon.n"></a></li>
+    </ul>
+    <ul>
+      
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+		jQuery(".slideTxtBox").slide();
+		</script> 

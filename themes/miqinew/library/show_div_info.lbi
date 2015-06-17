@@ -1,0 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $script_name eq 0}
+<b>{$lang.y_to_cart_success}</b><p class="center_pop_p">{$lang.y_cart_has} {$real_goods_count} {$lang.y_cart_count}({$goods_number} {$lang.y_a_piece}) &nbsp;&nbsp;&nbsp;&nbsp;{$lang.y_total}：<span>{$goods_amount}</span></p>
+{elseif $script_name eq 1}
+<a class="success_close" href="javascript:void(0);" onClick="close_div({$goods_id},'{$goods_recommend}')"></a><p class="addSucess_tip">{$lang.y_to_cart_success}</p><p class="cart_num">{$lang.y_cart_has} {$real_goods_count} {$lang.y_cart_count}({$goods_number} {$lang.y_a_piece})</p><p class="cart_price">{$lang.y_total}：<span class="cart_priceNum">{$goods_amount}</span></p><a class="cart_account" href="./flow.php">{$lang.y_to_cart_settle}</a>
+{/if}
